@@ -1,24 +1,36 @@
 //react router dom to lay the the page
-import { Outlet } from "react-router-dom";
-import Navbar from '../react-bootstap_compontants/Navbar.js'
-import Stack from 'react-bootstrap/Stack';
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import Navbar from '../componts/nav.js';
+import Home from '../contents/home.js';
+import Footer from '../componts/footer.js';
+function footer (){
 
-
-export default function Root(){
+    console.log("no footer")
+}
+export default function root(){
   
     return(
-        <>
-        
-     
-        <Navbar />
         
         
         
+        <BrowserRouter>
+            <>
+            
+
+                <Navbar />
+                
+                <Routes>
+                    
+                        <Route path="/" element={<Home />} />
+                    
+                        
+                    
+                </Routes>
+             {/*if the window at the top of the page is not the home page, the footer will be displayed*/}
+             
+              {footer()}
+            </>
+        </BrowserRouter>
         
-        
-        
-        <Outlet />
-        
-        </>
     )
 }

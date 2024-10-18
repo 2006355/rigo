@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import OurProject from './Our Projects.jpg';
 import RenewableEnergy from './img/download.jpeg';
-function BasicExample() {
+function NavComponent() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary" >
       <Container>
@@ -61,4 +61,4 @@ function BasicExample() {
   );
 }
 
-export default BasicExample;
+export default NavComponent;
