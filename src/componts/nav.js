@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import OurProject from './Our Projects.jpg';
+import OurProject from './OurProjects.jpg';
 import RenewableEnergy from './img/download.jpeg';
 function NavComponent() {
   return (
@@ -38,6 +38,7 @@ function NavComponent() {
             <NavDropdown title = "Contact" >
               <span>
                 <table>
+                  <tbody>
                   <tr>
                     <td>Phone:</td>
                     <td>1234567890</td>
@@ -51,6 +52,7 @@ function NavComponent() {
                     <td>Address:</td>
                     <td>1234 Main Street</td>
                   </tr>
+                  </tbody>
                 </table>
               </span>
             </NavDropdown>
