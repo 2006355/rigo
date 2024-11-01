@@ -1,14 +1,33 @@
 // home.js
-import React,{useState,useRef} from 'react';
+import React,{useState,useRef,useEffect} from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import OurProject from '../componts/OurProjects.jpg';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Footer from '../componts/footer.js';
 import { height } from '@mui/system';
 import technology from './technology/tech.jpg'
-
+import careers from './careers/carees.jpg'
+import contact from './careers/envelope.svg'
+import market from './careers/bank.svg'
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import '../componts/aninmation.css'
 function Home() {
+    const [showFooter, setShowFooter] = useState(false);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                setShowFooter(true);
+            } else {
+                setShowFooter(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     const [show, setShow] = useState(false);
     const [showbutton, setShowbutton] = useState(true);
     const nodeRef = useRef(null);
@@ -34,17 +53,20 @@ function Home() {
         {
             id: 4,
             title: "Renewable energy Market",
-            content: "From solar and wind power to advanced battery storage and sustainable fuel technologies, our portfolio encompasses a range of solutions designed to transform how the world produces and consumes energy. By integrating renewable resources into traditional power infrastructures,/n we’re helping industries and communities transition to clean energy in a seamless, scalable way."
-        },
+            content: "From solar and wind power to advanced battery storage and sustainable fuel technologies, our portfolio encompasses a range of solutions designed to transform how the world produces and consumes energy. By integrating renewable resources into traditional power infrastructures,/n we’re helping industries and communities transition to clean energy in a seamless, scalable way.",
+            img: market
+        },  
         {
             id: 5,
             title: "Careers",
-            content: "We are a renewable energy company that specializes in solar and offshore wind projects. We also have a hybrid energy division that focuses on hydrogen and hydraulic energy."
+            content: "Join our team and be part of a global movement towards sustainable energy./n At our company, we believe in fostering a culture of innovation, collaboration, and growth. We offer exciting career opportunities in various fields, including engineering, project management, research and development, and more. Our employees are our greatest asset, and we are committed to providing a supportive and inclusive work environment where everyone can thrive. If you are passionate about renewable energy and want to make a positive impact on the world, we invite you to explore our current job openings and apply today.",
+            img: careers
         },
         {
             id: 6,
             title: "Contact",
-            content: "We are a renewable energy company that specializes in solar and offshore wind projects. We also have a hybrid energy division that focuses on hydrogen and hydraulic energy."
+            content: "We are a renewable energy company that specializes in solar and offshore wind projects. We also have a hybrid energy division that focuses on hydrogen and hydraulic energy.",
+            img: contact
         }
     ]);
     return (
@@ -84,7 +106,7 @@ function Home() {
         ))}
   
           {/*faded the foother  in */}
-            
+          {showFooter && <Footer />}
         </Container>    
     );
 }
