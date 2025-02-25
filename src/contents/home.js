@@ -9,9 +9,11 @@ import technology from './technology/tech.jpg'
 import careers from './careers/carees.jpg'
 import contact from './careers/envelope.svg'
 import market from './careers/bank.svg'
+import homeContent from './home-content.json';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../componts/aninmation.css'
 function Home() {
+    
     const [showFooter, setShowFooter] = useState(false);
 
     useEffect(() => {
@@ -27,47 +29,52 @@ function Home() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    
+    },
+    []);
     const [show, setShow] = useState(false);
     const [showbutton, setShowbutton] = useState(true);
     const nodeRef = useRef(null);
     const [titles, setTitles] = useState([
-        {
-            id: 1,
-            title: "welcome to our company",
-            content:"Floating offshore windfarm Beyond the Horizon",
-            img: "OurProjects.jpg"
-        },
-        {
+        
+       {
+        id: 1,
+        title: 'Welcome to our company',
+        content: 'We are a company that specializes in renewable energy. Our projects include solar, offshore wind, hydrogen, and hydraulic energy.',
+        img: OurProject,
+
+       }, {
+
             id: 2,
-            title: "Our Projects",
-            content: "We are a renewable energy company that specializes in solar and offshore wind projects. We also have a hybrid energy division that focuses on hydrogen and hydraulic energy.",
-            img: OurProject
+            title: 'Our Projects',
+            content: 'We are a company that specializes in renewable energy. Our projects include solar, offshore wind, hydrogen, and hydraulic energy.',
+            img: OurProject,
         },
         {
             id: 3,
-            title: "Our Technology",
-            content: "At the heart of our mission to create a sustainable energy future is a commitment to pioneering technology. Our advanced solutions in solar, wind, energy storage, and smart grid management are designed to make renewable energy more efficient, accessible, and reliable. Through continuous innovation, we are empowering industries, cities, and individuals to embrace clean energy with confidence.",
-            img: technology
+            title: 'Our Technology',
+            content: 'Our technology is the best in the industry. We use the latest advancements in renewable energy to provide our customers with the most efficient and cost-effective solutions.',
+            img: technology,
         },
         {
             id: 4,
-            title: "Renewable energy Market",
-            content: "From solar and wind power to advanced battery storage and sustainable fuel technologies, our portfolio encompasses a range of solutions designed to transform how the world produces and consumes energy. By integrating renewable resources into traditional power infrastructures,/n we’re helping industries and communities transition to clean energy in a seamless, scalable way.",
-            img: market
-        },  
+            title: 'Renewable Energy Market',
+            content: 'The renewable energy market is growing rapidly, and we are at the forefront of this industry. Our business strategy and financial analysis are second to none.',
+            img: market,
+        },
         {
             id: 5,
-            title: "Careers",
-            content: "Join our team and be part of a global movement towards sustainable energy./n At our company, we believe in fostering a culture of innovation, collaboration, and growth. We offer exciting career opportunities in various fields, including engineering, project management, research and development, and more. Our employees are our greatest asset, and we are committed to providing a supportive and inclusive work environment where everyone can thrive. If you are passionate about renewable energy and want to make a positive impact on the world, we invite you to explore our current job openings and apply today.",
-            img: careers
+            title: 'Careers',
+            content: 'We are always looking for talented individuals to join our team. If you are passionate about renewable energy and want to make a difference in the world, we want to hear from you.',
+            img: careers,
         },
         {
             id: 6,
-            title: "Contact",
-            content: "We are a renewable energy company that specializes in solar and offshore wind projects. We also have a hybrid energy division that focuses on hydrogen and hydraulic energy.",
-            img: contact
+            title: 'Contact',
+            content: 'If you have any questions or would like to learn more about our company, please contact us. We are happy to help in any way we can.',
+            img: contact,
         }
+        
     ]);
     return (
         <Container>

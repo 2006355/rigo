@@ -4,11 +4,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import OurProject from './OurProjects.jpg';
 import RenewableEnergy from './img/download.jpeg';
+
 function NavComponent() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary" >
+    <Navbar expand="lg" className="bg-body-tertiary" sticky='top'  data-bs-theme="light">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">About us</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" variant='underline'>
@@ -19,10 +20,12 @@ function NavComponent() {
               </span>
               <NavDropdown.Item href="#action/3.2">Solor</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.1">Offshore wind</NavDropdown.Item>
+              <NavDropdown.Item href='#lndinnovation/3.3'>R&D and Innovations</NavDropdown.Item>
               <NavDropdown title="Hybrid energy" id="hybridEnergy-nav-dropdown">
                 
                 <NavDropdown.Item href="#action/3.2">Hydrogen</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">Hydraulic</NavDropdown.Item>
+                
               </NavDropdown>
             </NavDropdown>
             <Nav.Link href="#link">Our technology</Nav.Link>
@@ -58,6 +61,7 @@ function NavComponent() {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
+        
       </Container>
     </Navbar>
   );

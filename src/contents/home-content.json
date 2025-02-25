@@ -1,0 +1,82 @@
+
+[{
+
+    "English":
+    [
+       {
+        "id": 1,
+        "title": "Welcome to our company",
+        "content": "Floating wind farm beyond the horizon",
+        "img":"OurProject"
+       },
+         {
+          "id": 2,
+          "title": "Our Projects",
+          "content": "We are a renewable energy company specializing in offshore solar and wind projects. We also have a hybrid energy division that focuses on hydrogen and hydropower.",
+          "img": "OurProject"
+         },
+         {
+          "id": 3,
+          "title": "Our Technology",
+          "content": "At the heart of our mission to create a sustainable energy future is a commitment to cutting-edge technology. Our advanced solutions in solar, wind, energy storage, and smart grid management are designed to make renewable energy more efficient, accessible, and reliable. Through continuous innovation, we empower industries, cities, and individuals to adopt clean energy with confidence.",
+          "img": "technology"
+         },
+         {
+          "id": 4,
+          "title": "Renewable Energy Market",
+          "content": "From solar and wind energy to advanced battery storage and sustainable fuel technologies, our portfolio includes a range of solutions designed to transform the way the world produces and consumes energy. By integrating renewable resources into traditional energy infrastructures, we help industries and communities transition to clean energy seamlessly and scalably.",
+          "img": "market"
+         },
+         {
+          "id": 5,
+          "title": "Careers",
+          "content": "Join our team and be part of a global movement toward sustainable energy. At our company, we believe in fostering a culture of innovation, collaboration, and growth. We offer exciting career opportunities in various fields, including engineering, project management, research and development, and more. Our employees are our most valuable asset, and we are committed to providing a supportive and inclusive work environment where everyone can thrive. If you are passionate about renewable energy and want to make a positive impact on the world, we invite you to explore our current job openings and apply today.",
+          "img": "careers"
+         },
+         {
+          "id": 6,
+          "title": "Contact",
+          "content": "We are a renewable energy company specializing in offshore solar and wind projects. We also have a hybrid energy division that focuses on hydrogen and hydropower.",
+          "img": "contact"
+         }
+    ],
+    "French": [
+        {
+                    "id": 1,
+                    "title": "bienvenue dans notre entreprise",
+                    "content": "Parc éolien flottant au-delà de l'horizon",
+                    "img":"OurProject"
+                },
+                {
+                    "id": 2,
+                    "title": "Nos Projets",
+                    "content": "Nous sommes une entreprise d'énergie renouvelable spécialisée dans les projets solaires et éoliens offshore. Nous avons également une division d'énergie hybride qui se concentre sur l'hydrogène et l'énergie hydraulique.",
+                    "img": "OurProject"
+                },
+                {
+                    "id": 3,
+                    "title": "Notre Technologie",
+                    "content": "Au cœur de notre mission de créer un avenir énergétique durable se trouve un engagement envers la technologie de pointe. Nos solutions avancées dans le solaire, l'éolien, le stockage d'énergie et la gestion des réseaux intelligents sont conçues pour rendre l'énergie renouvelable plus efficace, accessible et fiable. Grâce à une innovation continue, nous permettons aux industries, aux villes et aux individus d'adopter l'énergie propre en toute confiance.",
+                    "img": "technology"
+                },
+                {
+                    "id": 4,
+                    "title": "Marché de l'énergie renouvelable",
+                    "content": "De l'énergie solaire et éolienne au stockage avancé des batteries et aux technologies de carburants durables, notre portefeuille comprend une gamme de solutions conçues pour transformer la manière dont le monde produit et consomme de l'énergie. En intégrant des ressources renouvelables dans les infrastructures énergétiques traditionnelles, nous aidons les industries et les communautés à passer à l'énergie propre de manière transparente et évolutive.",
+                    "img": "market"
+                },  
+                {
+                    "id": 5,
+                    "title": "Carrières",
+                    "content": "Rejoignez notre équipe et faites partie d'un mouvement mondial vers l'énergie durable. Dans notre entreprise, nous croyons en la promotion d'une culture d'innovation, de collaboration et de croissance. Nous offrons des opportunités de carrière passionnantes dans divers domaines, y compris l'ingénierie, la gestion de projet, la recherche et le développement, et plus encore. Nos employés sont notre atout le plus précieux, et nous nous engageons à fournir un environnement de travail favorable et inclusif où chacun peut s'épanouir. Si vous êtes passionné par l'énergie renouvelable et souhaitez avoir un impact positif sur le monde, nous vous invitons à explorer nos offres d'emploi actuelles et à postuler dès aujourd'hui.",
+                    "img": "careers"
+                },
+                {
+                    "id": 6,
+                    "title": "Contact",
+                    "content": "Nous sommes une entreprise d'énergie renouvelable spécialisée dans les projets solaires et éoliens offshore. Nous avons également une division d'énergie hybride qui se concentre sur l'hydrogène et l'énergie hydraulique.",
+                    "img": "contact"
+                }
+        
+    ]
+}]
