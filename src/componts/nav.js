@@ -37,7 +37,7 @@ function NavComponent() {
               <NavDropdown.Item href="#action/3.2">Financial analysis offshore</NavDropdown.Item>
               
             </NavDropdown>
-            <Nav.Link href="#link">Careers</Nav.Link>
+            <Nav.Link href="/careers">Careers</Nav.Link>
             <NavDropdown title = "Contact" >
               <span>
                 <table>

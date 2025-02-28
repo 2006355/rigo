@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-origin: orange;
+}
+
+.image-container {
+    position: relative;
+    background: url('../src/contents/careers/careers-content.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 50px;
+    color: rgba(219, 124, 124, 1);
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 20px;
+    height: 300px; /* Adjust the height as needed */
+}
+.image-text{
+   
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.container {
+    padding: 20px;
+}
+
+.facts {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 20px 0;
+}
+
+.fact {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.highlight {
+    font-size: 40px;
+    color: red;
+}
+
+.vacancies {
+    margin-top: 40px;
+}
+.job{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 20px 0;
+    border: 10px solid black;
+    box-shadow: 10px 10px 5px grey;
+    padding: 20px;
+
+
+}
+.jobTitle{
+    font-size: 20px;
+    font-weight: bold;
+    float: left;
+
+    
+    color: black;
+}
+i{
+    color: black;
+}
