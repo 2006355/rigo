@@ -53,7 +53,7 @@ const FormPage = () => {
                     
                 </Form.Group>
 
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Submit</button>
             </Form>
 
         </div>
