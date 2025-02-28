@@ -5,6 +5,7 @@ import Navbar from '../componts/nav.js';
 import Home from '../contents/home.js';
 import Footer from '../componts/footer.js';
 import Careers from '../contents/careers/careers.js';
+import Form from '../contents/careers/form.js';
 import { CSSTransition } from 'react-transition-group';
 import '../componts/aninmation.css'
 export default function Root(){
@@ -23,6 +24,7 @@ export default function Root(){
                     
                         <Route path="/" element={<Home />} />
                         <Route path="/careers" element={<Careers />} />
+                        <Route path='/form' element = {<Form />} />
                     
                         
                     
