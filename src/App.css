@@ -50,6 +50,7 @@ body {
 
 .vacancies {
     margin-top: 40px;
+    
 }
 .job{
     display: flex;
@@ -62,6 +63,12 @@ body {
 
 
 }
+.job:hover{
+    padding: 30px;
+    border: 10px solid red;
+    box-shadow: 10px 10px 5px black;
+}
+
 .jobTitle{
     font-size: 20px;
     font-weight: bold;
@@ -70,6 +77,18 @@ body {
     
     color: black;
 }
+
+a{
+    text-decoration: none;
+    color: black;
+}
 i{
     color: black;
+    transition: transform 0.5s ease-in-out;
+    
+}
+i:hover{
+    text-decoration: underline;
+    color: red;
+    transform: rotate(90deg), scale(1.5);
 }

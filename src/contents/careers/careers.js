@@ -1,9 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../../App.css";
 
 import careersimg from './careers-content.jpg';
 import { use } from 'react';
 const Careers = () => {
+    useEffect(() => {
+        const arrowIcons = document.querySelectorAll('i.bi-arrow-right');
+
+        arrowIcons.forEach(icon => {
+            const handleMouseOver = () => {
+                icon.classList.remove('bi-arrow-right');
+                icon.innerHTML = '<a href="/form">Apply</a>';
+            };
+
+            const handleMouseOut = () => {
+                icon.classList.add('bi-arrow-right');
+                icon.innerHTML = ''; // Clear the inner HTML
+            };
+
+            icon.addEventListener('mouseover', handleMouseOver);
+            icon.addEventListener('mouseout', handleMouseOut);
+
+            // Cleanup function to remove event listeners
+            return () => {
+                icon.removeEventListener('mouseover', handleMouseOver);
+                icon.removeEventListener('mouseout', handleMouseOut);
+            };
+        });
+    }, []); // Empty dependency array ensures this runs once after the initial render
+
+
   const [state, setState] = useState({
     projects: 20,
     vacancies: 5,
@@ -61,13 +87,13 @@ const Careers = () => {
         <div className="vacancies">
           <h3>Current Vacancies</h3>
          
-          {jobList.map((jobList) => (
-            <div className="job">
+          {jobList.map((jobList, index) => (
+            <div className="job" key={index}>
               <h4 className='jobTitle'>{jobList.title}</h4>
               <p className= 'job-loc'>{jobList.location}</p>
               <p className='job-sal'>{jobList.salary}</p>
               <a href ="/form">
-              <i class="bi bi-arrow-right"></i>
+              <i class="bi bi-arrow-right"> </i>
               </a>
               
             </div>
