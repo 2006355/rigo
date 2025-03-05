@@ -1,18 +1,30 @@
 import express from 'express';
 import nodemailer from 'nodemailer';
 import bodyParser from 'body-parser';
-import dotenv from 'dotenv';
+import dotenv from 'dotenv'
+import path from 'path';
+import cors from 'cors';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT|| 5000;
-
+app.use(express.urlencoded({ extended: true })); // Parses URL-encoded bodies
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+var options = {
+    index: "index.html"
+  };
+  
+  var dir = path.join(__dirname, '../public')
 app.use(bodyParser.json());
+app.use(cors())
 
 app.post('/careers/send-email', async (req, res) => {
-    const { to, subject, text,File } = req.body;
-    
+    const { to, subject, text } = req.body;
+    console.log(req.body);
 
     // Create a transporter object using SMTP transport
     let transporter = nodemailer.createTransport({
@@ -29,7 +41,14 @@ app.post('/careers/send-email', async (req, res) => {
         to: to,
         subject: subject,
         text: text,
-        File: File
+        attachments: [
+            {
+                filename: req.body['resume-name'],
+                content: req.body['resume'],
+                encoding: 'base64'
+            }
+        ]
+        
     };
 
     try {
@@ -40,7 +59,7 @@ app.post('/careers/send-email', async (req, res) => {
         res.status(500).send(`Error sending email: ${error.message}`);
     }
 });
-
+app.use(express.static(dir, options));
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });

@@ -9,9 +9,9 @@ const FormPage = () => {
     console.log(location.state);
     const { job } = location.state || {};
     const [applicant, setApplicant] = useState({
-        name: 'h',
-        email: '',
-        coverLetter: '',
+        name: 'jon',
+        email: 'jaadams12@outlook.com',
+        coverLetter: 'hi',
     
     });
     const [resume, setResume] = useState(null);
@@ -36,16 +36,23 @@ const FormPage = () => {
         if (resume) {
             const reader = new FileReader();
             reader.onloadend = () => {
+                formData.append('resume-name', resume.name);
                 formData.append('resume', reader.result);
                 console.log('Form submitted:', Object.fromEntries(formData.entries()));
                 //Handle form submission, including the resume file
                 // Example: Send form data to a server
-                 fetch('/backend/send-email', {
+                 fetch('/careers/send-email', {
                      method: 'POST',
                     body: formData
-                }).then(response => response.json())
-                 .then(data => console.log(data))
-                  .catch(error => console.error(error));
+                }).then(response => {
+                    if (response.headers.get('content-type')?.includes('application/json')) {
+                        return response.json();
+                    } else {
+                        throw new Error('Unexpected content type');
+                    }
+                })
+                .then(data => console.log(data))
+                .catch(error => console.error(error));
             };
             reader.readAsDataURL(resume);
         } else {
