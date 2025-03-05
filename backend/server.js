@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(cors())
 
 app.post('/careers/send-email', async (req, res) => {
-    const { to, subject, text } = req.body;
+    const { from, subject, text } = req.body;
     console.log(req.body);
 
     // Create a transporter object using SMTP transport
@@ -37,8 +37,8 @@ app.post('/careers/send-email', async (req, res) => {
 
     // Setup email data
     let mailOptions = {
-        from: process.env.EMAIL_USER,
-        to: to,
+        from: from,
+        to: process.env.EMAIL_USER,
         subject: subject,
         text: text,
         attachments: [
