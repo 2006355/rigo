@@ -40,7 +40,7 @@ const FormPage = () => {
                 console.log('Form submitted:', Object.fromEntries(formData.entries()));
                 //Handle form submission, including the resume file
                 // Example: Send form data to a server
-                 fetch('/api/upload', {
+                 fetch('/backend/send-email', {
                      method: 'POST',
                     body: formData
                 }).then(response => response.json())
