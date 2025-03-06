@@ -1,19 +1,16 @@
 // home.js
-import React,{useState,useRef,useEffect} from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import React, { useState, useEffect, useRef } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import OurProject from '../componts/OurProjects.jpg';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Footer from '../componts/footer.js';
-import { height } from '@mui/system';
-import technology from './technology/tech.jpg'
-import careers from './careers/carees.jpg'
-import contact from './careers/envelope.svg'
-import market from './careers/bank.svg'
-import homeContent from './home-content.json';
+import technology from './technology/tech.jpg';
+import careers from './careers/carees.jpg';
+import contact from './careers/envelope.svg';
+import market from './careers/bank.svg';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import '../componts/aninmation.css'
+import '../componts/aninmation.css';
+
 function Home() {
-    
     const [showFooter, setShowFooter] = useState(false);
 
     useEffect(() => {
@@ -29,22 +26,16 @@ function Home() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    
-    },
-    []);
-    const [show, setShow] = useState(false);
-    const [showbutton, setShowbutton] = useState(true);
-    const nodeRef = useRef(null);
+    }, []);
+
     const [titles, setTitles] = useState([
-        
-       {
-        id: 1,
-        title: 'Welcome to our company',
-        content: 'We are a company that specializes in renewable energy. Our projects include solar, offshore wind, hydrogen, and hydraulic energy.',
-        img: OurProject,
-
-       }, {
-
+        {
+            id: 1,
+            title: 'Welcome to our company',
+            content: 'We are a company that specializes in renewable energy. Our projects include solar, offshore wind, hydrogen, and hydraulic energy.',
+            img: OurProject,
+        },
+        {
             id: 2,
             title: 'Our Projects',
             content: 'We are a company that specializes in renewable energy. Our projects include solar, offshore wind, hydrogen, and hydraulic energy.',
@@ -73,48 +64,79 @@ function Home() {
             title: 'Contact',
             content: 'If you have any questions or would like to learn more about our company, please contact us. We are happy to help in any way we can.',
             img: contact,
-        }
-        
+        },
     ]);
+
+    const elementsRef = useRef([]);
+    elementsRef.current = [];
+
+    const addToRefs = (el) => {
+        if (el && !elementsRef.current.includes(el)) {
+            elementsRef.current.push(el);
+        }
+    };
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        elementsRef.current.forEach((el) => {
+            observer.observe(el);
+        });
+
+        return () => {
+            elementsRef.current.forEach((el) => {
+                observer.unobserve(el);
+            });
+        };
+    }, []);
+
     return (
-        <Container>
-        {titles.map((title) => (
-            <Row key={title.id} className='my-4'>
-                {title.id === 1 ? (
-                    <Col style={{ backgroundImage: `url(${OurProject})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '300px', textAlign:'center' }}>
-                       <h1>{title.title}</h1>
-                          <p>{title.content}</p> 
-                    </Col>
-            ) : title.id % 2 === 0 ? (
-            //if id is even then show the media on the right side
-            <>
-                <Col>
-                    <h1>{title.title}</h1>
-                    <p>{title.content}</p>
-                </Col>
-                <Col>
-                    <img src={title.img} alt={title.title} className="img-fluid"/>
-                </Col>
-            </>
-            ) : (
-            //</>if id is odd then show the media on the left side
-            <>
-                <Col>
-                    <img src={title.img} alt={title.title} className='img-fluid'/>
-                </Col>
-                <Col>
-                    <h1>{title.title}</h1>
-                    <p>{title.content}</p>
-                </Col>
-            </>
-            )
-        }     
-            </Row>
-        ))}
-  
-          {/*faded the foother  in */}
-          {showFooter && <Footer />}
-        </Container>    
+        <Container style={{ background: 'linear-gradient(blue, green)' }} className='p-3'>
+            {titles.map((title) => (
+                <Row key={title.id} className='my-4 fade-in' ref={addToRefs}>
+                    {title.id === 1 ? (
+                        <Col style={{ backgroundImage: `url(${OurProject})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '300px', textAlign: 'center' }}>
+                            <h1>{title.title}</h1>
+                            <p>{title.content}</p>
+                        </Col>
+                    ) : title.id % 2 === 0 ? (
+                        // if id is even then show the media on the right side
+                        <>
+                            <Col>
+                                <h1>{title.title}</h1>
+                                <p>{title.content}</p>
+                            </Col>
+                            <Col>
+                                <img src={title.img} alt={title.title} className="img-fluid" />
+                            </Col>
+                        </>
+                    ) : (
+                        // if id is odd then show the media on the left side
+                        <>
+                            <Col>
+                                <img src={title.img} alt={title.title} className='img-fluid' />
+                            </Col>
+                            <Col>
+                                <h1>{title.title}</h1>
+                                <p>{title.content}</p>
+                            </Col>
+                        </>
+                    )}
+                </Row>
+            ))}
+
+            {/* faded the footer in */}
+            {showFooter && <Footer />}
+        </Container>
     );
 }
 

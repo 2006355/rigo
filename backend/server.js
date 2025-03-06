@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv'
 import path from 'path';
 import cors from 'cors';
+import multer from 'multer';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
@@ -33,6 +34,7 @@ app.post('/careers/send-email', async (req, res) => {
             user: process.env.EMAIL_USER,
             pass: process.env.EMAIL_PASS
         }
+        
     });
 
     // Setup email data
@@ -61,5 +63,5 @@ app.post('/careers/send-email', async (req, res) => {
 });
 app.use(express.static(dir, options));
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server running on http://localhost:${port}`);
 });
