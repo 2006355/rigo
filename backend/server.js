@@ -63,5 +63,5 @@ app.post('/careers/send-email', async (req, res) => {
 });
 app.use(express.static(dir, options));
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server running on http://localhost:${port}`);
 });
