@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/server.js",
+
+      "use": "@vercel/node",
+
+      "config": {
+        "includeFiles": ["backend/**"]
+
+      }
+    },
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "frontend/build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/careers/(.*)",
+      "dest": "/backend/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/$1"
+    }
+
+  ],
+"env": {
+  "EMAIL_USER": "jonadams603@gmail.com",
+  "EMAIL_PASS": "lvhx dqos fatc hnga",
+  "PORT": "8000"
+}
+}
