@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv'
 import path from 'path';
 import cors from 'cors';
+import multer from 'multer';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
@@ -33,6 +34,7 @@ app.post('/careers/send-email', async (req, res) => {
             user: process.env.EMAIL_USER,
             pass: process.env.EMAIL_PASS
         }
+        
     });
 
     // Setup email data
