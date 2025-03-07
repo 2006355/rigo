@@ -1,42 +1,34 @@
 {
   "version": 2,
   "builds": [
-    
     {
       "src": "./package.json",
       "use": "@vercel/static-build",
       "config": {
-
-        "distDir": "./build"
-
+        "distDir": "build"
       }
     },
     {
-        "src": "backend/server.js",
-  
-        "use": "@vercel/node",
-  
-        "config": {
-          "includeFiles": ["backend/**"]
-  
-        }
+      "src": "backend/server.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["backend/**"]
       }
+    }
   ],
   "routes": [
     {
-      "src": "/careers/(.*)",
+      "src": "/api/(.*)",
       "dest": "/backend/server.js"
     },
     {
-    "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+      "src": "/(.*)",
+      "dest": "/build/$1"
     }
-  
-
-
   ],
-"env": {
-  "EMAIL_USER": "jonadams603@gmail.com",
-  "EMAIL_PASS": "lvhx dqos fatc hnga",
-  "PORT": "8000"
-}
+  "env": {
+    "EMAIL_USER": "jonadams603@gmail.com",
+    "EMAIL_PASS": "lvhx dqos fatc hnga",
+    "PORT": "8000"
+  }
 }
