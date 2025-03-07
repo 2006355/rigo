@@ -28,9 +28,10 @@
       "dest": "/backend/server.js"
     },
     {
-      "src": "/src/Routes/(.*)", 
-      "dest": "/src/$1"
+    "rewrites": [{ "source": "/(.*)", "destination": "/" }]
     }
+  
+
 
   ],
 "env": {
