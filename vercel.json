@@ -23,15 +23,15 @@
     },
     {
       "src": "/careers",
-      "dest": "/index.html"
+      "dest": "/build/index.html"
     },
     {
       "src": "/form",
-      "dest": "/index.html"
+      "dest": "/build/index.html"
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/build/index.html"
     }
   ],
   "env": {
