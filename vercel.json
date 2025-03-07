@@ -1,23 +1,24 @@
 {
   "version": 2,
   "builds": [
+    
     {
-      "src": "backend/package.json",
-
-      "use": "@vercel/node",
-
-      "config": {
-        "includeFiles": ["backend/**"]
-
-      }
-    },
-    {
-      "src": "frontend/package.json",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "frontend/build"
       }
-    }
+    },
+    {
+        "src": "backend/package.json",
+  
+        "use": "@vercel/node",
+  
+        "config": {
+          "includeFiles": ["backend/**"]
+  
+        }
+      }
   ],
   "routes": [
     {
