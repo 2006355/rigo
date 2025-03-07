@@ -22,19 +22,17 @@
       "dest": "/backend/server.js"
     },
     {
+      "src": "/careers",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/form",
+      "dest": "/index.html"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/build/$1"
-    },
-    {
-      "src":"./careers",
-      "dest":"/build/$1"
-    },
-    {
-      "src":"./form",
-      "dest":"/build/$1"
+      "dest": "/index.html"
     }
-
-    
   ],
   "env": {
     "EMAIL_USER": "jonadams603@gmail.com",
