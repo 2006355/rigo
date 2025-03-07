@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import "../../App.css";
-import careersimg from './careers-content.jpg';
+
 
 const Careers = () => {
     const [state, setState] = useState({

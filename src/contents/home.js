@@ -1,15 +1,15 @@
 // home.js
 import React,{useState,useRef,useEffect} from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import OurProject from '../componts/OurProjects.jpg';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 import Footer from '../componts/footer.js';
-import { height } from '@mui/system';
+
 import technology from './technology/tech.jpg'
 import careers from './careers/carees.jpg'
 import contact from './careers/envelope.svg'
 import market from './careers/bank.svg'
-import homeContent from './home-content.json';
+
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../componts/aninmation.css'
 function Home() {
